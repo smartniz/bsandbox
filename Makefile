@@ -1,9 +1,6 @@
 .PHONY: all clean gen_person_artifacts run_validation
 
-all:
-	clean
-	gen_person_artifacts
-	run_validation
+all: clean gen_person_artifacts run_validation
 
 clean:
 	rm -rf personinfo/*
