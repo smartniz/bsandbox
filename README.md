@@ -54,9 +54,7 @@ WARNING:root:UNKNOWN: XSDDate // <class 'linkml_runtime.utils.yamlutils.extended
 WARNING:root:UNKNOWN: XSDDate // <class 'linkml_runtime.utils.yamlutils.extended_str'>
 ERROR:root:No PK for Address
   WRITING TO: personinfo/sqlschema/personinfo.sql
-  
-also
-> WARNING:ShExGenerator:Unrecognized prefix: skos
+
 
 `% ./venv/bin/linkml-convert -m personinfo/personinfo.py -o person_glance_data.yaml -t yaml -C Person -s personinfo.yaml person_glance_data.json`
 >WARNING:root:There is no established path to personinfo/personinfo.py - compile_python may or may not work
