@@ -1,0 +1,15 @@
+{
+  "id": "Waldo",
+  "primary_email": "waldo@whwald.example.com",
+  "current_address": {
+    "street": "0 Main Street",
+    "city": "Anytown",
+    "postal_code": "00000"
+  },
+  "has_medical_history": {
+    "diagnosis": {
+      "id": "ICD10:F44.1", "name": "Fugue"
+    }
+  }
+}
+
