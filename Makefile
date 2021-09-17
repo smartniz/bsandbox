@@ -9,6 +9,7 @@ clean:
 
 personinfo.yaml:
 	curl https://raw.githubusercontent.com/linkml/linkml/main/examples/PersonSchema/personinfo.yaml > $@
+	# python add_prefixes_from_file.py
 	
 personinfo/personinfo.py: personinfo.yaml
 	gen-project -d personinfo personinfo.yaml
