@@ -5,7 +5,8 @@ see
 - https://linkml.io/
 - use template or https://linkml.io/linkml/generators/project-generator.html?highlight=template ?
 
-- start with linkml individuals in yaml?
+- start with linkml individuals in json
+- convert to yaml?
 
 - try
     - various virtual environments
@@ -14,6 +15,8 @@ see
     - nlp
     - visualization
     - builing package and publishing
+    - testing
+    - GitHub actions
     - ...
 
 ----
