@@ -29,9 +29,7 @@ many of these:
 
 
 - `curl https://raw.githubusercontent.com/linkml/linkml/main/examples/PersonSchema/personinfo.yaml` > personinfo.yaml
-- `mkdir personinfo`
-- `gen-project -d personinfo 
-- `gen-project -d personinfo personinfo.yaml` 
+
     
 OK except for 
     

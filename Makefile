@@ -1,14 +1,17 @@
-.PHONY: all clean gen_person_artifacts run_validation
+.PHONY: all clean 
 
-all: clean gen_person_artifacts run_validation
+all: clean person_validation.txt
 
 clean:
+	rm -rf personinfo.yaml
 	rm -rf personinfo/*
+	rm -rf person_validation.txt
+
+personinfo.yaml:
+	curl https://raw.githubusercontent.com/linkml/linkml/main/examples/PersonSchema/personinfo.yaml > $@
 	
-gen_person_artifacts:
+personinfo/personinfo.py: personinfo.yaml
 	gen-project -d personinfo personinfo.yaml
 
-run_validation:
-	python person_validation.py
-
-
+person_validation.txt: personinfo.yaml personinfo/personinfo.py
+	python person_validation.py > $@
