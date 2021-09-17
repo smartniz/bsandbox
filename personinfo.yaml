@@ -1,12 +1,11 @@
 id: https://w3id.org/linkml/examples/personinfo
 name: personinfo
-description: |-
-  Information about people, based on [schema.org](http://schema.org)
+description: Information about people, based on [schema.org](http://schema.org)
 license: https://creativecommons.org/publicdomain/zero/1.0/
 default_curi_maps:
-  - semweb_context
+- semweb_context
 imports:
-  - linkml:types
+- linkml:types
 prefixes:
   personinfo: https://w3id.org/linkml/examples/personinfo/
   linkml: https://w3id.org/linkml/
@@ -15,111 +14,92 @@ prefixes:
   prov: http://www.w3.org/ns/prov#
   GSSO: http://purl.obolibrary.org/obo/GSSO_
   famrel: https://example.org/FamilialRelations#
+  skos: http://www.w3.org/2004/02/skos/core#
 default_prefix: personinfo
 default_range: string
-
 emit_prefixes:
-  - rdf
-  - rdfs
-  - xsd
-  - skos
-
+- rdf
+- rdfs
+- xsd
+- skos
 classes:
-
   NamedThing:
-    description: >-
-      A generic grouping for any identifiable entity
+    description: A generic grouping for any identifiable entity
     slots:
-      - id
-      - name
-      - description
-      - image
+    - id
+    - name
+    - description
+    - image
     close_mappings:
-     - schema:Thing
-
+    - schema:Thing
   Person:
     is_a: NamedThing
-    description: >-
-      A person (alive, dead, undead, or fictional).
+    description: A person (alive, dead, undead, or fictional).
     class_uri: schema:Person
     mixins:
-      - HasAliases
+    - HasAliases
     slots:
-      - primary_email
-      - birth_date
-      - age_in_years
-      - gender
-      - current_address
-      - has_employment_history
-      - has_familial_relationships
-      - has_medical_history
+    - primary_email
+    - birth_date
+    - age_in_years
+    - gender
+    - current_address
+    - has_employment_history
+    - has_familial_relationships
+    - has_medical_history
     slot_usage:
       primary_email:
-        pattern: "^\\S+@[\\S+\\.]+\\S+"  
-  
+        pattern: ^\S+@[\S+\.]+\S+
   HasAliases:
-    description: >-
-      A mixin applied to any class that can have aliases/alternateNames
+    description: A mixin applied to any class that can have aliases/alternateNames
     mixin: true
     attributes:
       aliases:
         multivalued: true
         exact_mappings:
-          - schema:alternateName
-
-
+        - schema:alternateName
   Organization:
-    description: >-
-      An organization such as a company or university
+    description: An organization such as a company or university
     is_a: NamedThing
     class_uri: schema:Organization
     mixins:
-      - HasAliases
+    - HasAliases
     slots:
-      - mission_statement
-      - founding_date
-      - founding_location
-
+    - mission_statement
+    - founding_date
+    - founding_location
   Place:
     mixins:
-      - HasAliases
+    - HasAliases
     slots:
-      - id
-      - name
-      
+    - id
+    - name
   Address:
     class_uri: schema:PostalAddress
     slots:
-      - street
-      - city
-      - postal_code
-
+    - street
+    - city
+    - postal_code
   Event:
     slots:
-      - started_at_time
-      - ended_at_time
-      - duration
-      - is_current
+    - started_at_time
+    - ended_at_time
+    - duration
+    - is_current
     close_mappings:
-      - schema:Event
-
+    - schema:Event
   Concept:
     is_a: NamedThing
-
   DiagnosisConcept:
     is_a: Concept
-
   ProcedureConcept:
     is_a: Concept
-      
-
   Relationship:
     slots:
-      - started_at_time
-      - ended_at_time
-      - related_to
-      - type
-
+    - started_at_time
+    - ended_at_time
+    - related_to
+    - type
   FamilialRelationship:
     is_a: Relationship
     slot_usage:
@@ -129,30 +109,24 @@ classes:
       related to:
         range: Person
         required: true
-
   EmploymentEvent:
     is_a: Event
     slots:
-      - employed_at
-
+    - employed_at
   MedicalEvent:
     is_a: Event
     slots:
-      - in_location
-      - diagnosis
-      - procedure
-
+    - in_location
+    - diagnosis
+    - procedure
   WithLocation:
     mixin: true
     slots:
-      - in_location
-
-  # TODO: annotate that this is a container/root class
+    - in_location
   Container:
     slots:
-      - persons
-      - organizations
-
+    - persons
+    - organizations
 slots:
   id:
     identifier: true
@@ -189,19 +163,18 @@ slots:
   in_location:
     range: Place
   current_address:
-    description: >-
-      The address at which a person currently lives
+    description: The address at which a person currently lives
     range: Address
   age_in_years:
     range: integer
     minimum_value: 0
     maximum_value: 999
-  related_to:
-  type:
-  street:
-  city:
-  mission_statement:
-  founding_date:
+  related_to: null
+  type: null
+  street: null
+  city: null
+  mission_statement: null
+  founding_date: null
   founding_location:
     range: Place
   postal_code:
@@ -217,11 +190,9 @@ slots:
   procedure:
     range: ProcedureConcept
     inlined: true
-
   ended_at_time:
     slot_uri: prov:endedAtTime
     range: date
-
   persons:
     range: Person
     inlined: true
@@ -232,7 +203,6 @@ slots:
     inlined_as_list: true
     inlined: true
     multivalued: true
-    
 enums:
   FamilialRelationshipType:
     permissible_values:
@@ -256,4 +226,5 @@ enums:
         meaning: GSSO:000371
       cisgender woman:
         meaning: GSSO:000385
-  DiagnosisType:
+  DiagnosisType: null
+
