@@ -7,4 +7,6 @@ a place to do bottom up exercises
     - various virtual environments
     - cookie cutter
     - tox
+    - nlp
+    - visualization
     - ...
