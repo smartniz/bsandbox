@@ -9,6 +9,7 @@ see
 - convert to yaml?
 
 - try
+    - make
     - various virtual environments
     - cookie cutter
     - tox
@@ -18,6 +19,7 @@ see
     - testing
     - GitHub actions
     - cli (click)
+    - docstrings
     - ...
 
 ----
