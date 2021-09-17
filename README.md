@@ -52,3 +52,6 @@ WARNING:root:UNKNOWN: XSDDate // <class 'linkml_runtime.utils.yamlutils.extended
 WARNING:root:UNKNOWN: XSDDate // <class 'linkml_runtime.utils.yamlutils.extended_str'>
 ERROR:root:No PK for Address
   WRITING TO: personinfo/sqlschema/personinfo.sql
+  
+also
+> WARNING:ShExGenerator:Unrecognized prefix: skos
