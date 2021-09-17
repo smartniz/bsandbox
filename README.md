@@ -8,7 +8,8 @@ see
 - start with linkml individuals in json
 - convert to yaml?
 
-- try
+- try/practice
+    - exception handling
     - make
     - various virtual environments
     - cookie cutter
