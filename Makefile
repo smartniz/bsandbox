@@ -7,6 +7,9 @@ clean:
 	rm -rf personinfo/*
 	rm -rf person_validation.txt
 
+# prefix commons or bioregistry
+# defualt curiemap semweb context
+# delete emission of skos
 personinfo.yaml:
 	curl https://raw.githubusercontent.com/linkml/linkml/main/examples/PersonSchema/personinfo.yaml > temp.yaml
 	python add_prefixes_from_file.py \
