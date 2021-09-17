@@ -16,24 +16,23 @@ see
     - builing package and publishing
     - ...
 
+----
+
 
 - clone this repo and cd into it
 - `% python3 -m venv venv`
 - `pip install -r requirements.txt`
     - try other virtual env and package installers
 
-Intel MacBook Pro 2020, macPS Big Sur 11.5.2
+
+
+
+- `make all`
+
+_Intel MacBook Pro 2020, macPS Big Sur 11.5.2_
 
 many of these:
 > DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621
-
-
-- `curl https://raw.githubusercontent.com/linkml/linkml/main/examples/PersonSchema/personinfo.yaml` > personinfo.yaml
-- `mkdir personinfo`
-- `gen-project -d personinfo 
-- `gen-project -d personinfo personinfo.yaml` 
-    
-OK except for 
     
 > GEN: sqlddl
  SCHEMA: personinfo.yaml
