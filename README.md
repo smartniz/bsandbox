@@ -17,6 +17,7 @@ see
     - builing package and publishing
     - testing
     - GitHub actions
+    - cli (click)
     - ...
 
 ----
@@ -53,3 +54,7 @@ ERROR:root:No PK for Address
   
 also
 > WARNING:ShExGenerator:Unrecognized prefix: skos
+
+`% ./venv/bin/linkml-convert -m personinfo/personinfo.py -o person_glance_data.yaml -t yaml -C Person -s personinfo.yaml person_glance_data.json`
+>WARNING:root:There is no established path to personinfo/personinfo.py - compile_python may or may not work
+WARNING:JsonSchemaGenerator:Unrecognized prefix: skos
